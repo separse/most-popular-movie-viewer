@@ -1,0 +1,33 @@
+.items {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+}
+.item {
+    font-size: .7rem;
+    padding: 1rem;
+    background-color: #336B87;
+    color: white;
+    border: 1px solid #90AFC5;
+    border-top: none;
+    cursor: pointer;
+}
+.selected {
+    font-weight: bold;
+    background-color: #90AFC5;
+    font-size: .8rem;
+}
+
+@media (min-width: 992px) {
+    .item{
+        font-size: 1rem;
+    }
+    .selected {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 570px) {
+    .items {
+        height: calc(100vh - 100px);
+    }
+}

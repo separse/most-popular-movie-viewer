@@ -1,0 +1,5 @@
+<section *ngIf="movies$ | async as movies" class="items">
+    <div *ngFor="let movie of movies" class="item" (click)="selectMovie(movie)" [class.selected]="movie.id === selectedMovieId">
+        {{ movie.title }}
+    </div>
+</section>

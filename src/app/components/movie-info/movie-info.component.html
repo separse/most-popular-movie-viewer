@@ -1,0 +1,18 @@
+<section *ngIf="movie" class="info">
+    <div class="text-center">
+        <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{movie.poster_path}}">
+    </div>
+    <div>
+        <h1>{{ movie.original_title }}</h1>
+        <!-- rating  -->
+        <ngb-rating [(rate)]="movie.vote_average" [starTemplate]="star" [readonly]="true" [max]="10"></ngb-rating>
+        <p>Rate of {{ movie.vote_average }} from {{ movie.vote_count }} vote</p>
+        <h6>{{ movie.overview }}</h6>
+    </div>
+</section>
+<!-- star  -->
+<ng-template #star let-fill="fill">
+    <span class="star" [class.star-full]="fill === 100">
+        <span class="star-half" [style.width.%]="fill">&#9733;</span>&#9733;
+    </span>
+</ng-template>
